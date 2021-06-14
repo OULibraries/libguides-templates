@@ -1,0 +1,308 @@
+html {
+  font-size: 1em;
+}
+
+body {
+  padding: 0;
+  font-family: verdana;
+  font-size: 0.85em;
+}
+
+/* Special */
+.sr-only, .globalheader .tip span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Skip Link */
+#s-lg-public-skiplink {
+  position: absolute;
+  top: -3em;
+  left: 1em;
+  transition: top 0.5s ease;
+  padding: 0.9em 0.6em;
+  text-decoration: underline;
+  opacity: 0;
+  color: #2346AF;
+  background-color: #fff;
+  border-color: #333;
+  box-shadow: 0 0 2px 2px #4c4c4c;
+  box-shadow: 0 0 2px 2px rgba(76, 76, 76, 0.5);
+}
+#s-lg-public-skiplink:focus, #s-lg-public-skiplink:active {
+  top: 1em;
+  left: 1em;
+  outline: none;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.5em;
+  opacity: 1;
+}
+#s-lg-public-skiplink:hover {
+  text-decoration: none;
+}
+
+/* Back to Top */
+#s-lib-scroll-top {
+  bottom: 15%;
+  width: 40px;
+  height: 40px;
+  right: 15px;
+  border: 3px solid #333;
+  border-radius: 0.5em;
+}
+#s-lib-scroll-top:hover, #s-lib-scroll-top:focus {
+  background-color: #ccc;
+}
+#s-lib-scroll-top > .fa-stack {
+  font-size: 1.5em;
+  line-height: 1em;
+  width: auto;
+  height: auto;
+}
+#s-lib-scroll-top .fa-angle-double-up.fa-stack-1x {
+  position: relative;
+  bottom: 6px;
+}
+
+/* Headers */
+.globalheader {
+  background-color: #333;
+}
+.globalheader ul {
+  height: 30px;
+  float: right;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-right: 40px;
+}
+.globalheader ul::after {
+  content: "";
+  display: block;
+  width: 100%;
+}
+.globalheader ul li {
+  float: left;
+}
+.globalheader ul li.wordmark {
+  color: #fff;
+  width: 200px;
+  height: 30px;
+  margin-left: 1em;
+  background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-wordmark.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media only screen and (max-width: 479px) {
+  .globalheader ul li.wordmark {
+    display: none;
+  }
+}
+.globalheader .tip {
+  position: relative;
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-icons.png");
+  background-repeat: no-repeat;
+  line-height: 0;
+}
+.globalheader .tip.home {
+  background-position: 0 0;
+}
+.globalheader .tip.search {
+  background-position: -30px 0;
+}
+.globalheader .tip.social {
+  background-position: -60px 0;
+}
+.globalheader .tip:hover, .globalheader .tip:focus {
+  background-position-y: -30px;
+  background-color: #e8e8e8;
+  outline: none;
+}
+.globalheader .tip:hover span, .globalheader .tip:focus span {
+  position: absolute;
+  z-index: 25;
+  top: 135%;
+  left: -3.75em;
+  width: 10em;
+  display: block;
+  margin: 0;
+  padding: 1.25em 0;
+  border: 1px solid #444;
+  background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-tipbg.gif");
+  background-repeat: repeat;
+  background-color: #222;
+  white-space: nowrap;
+  text-align: center;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  overflow: unset;
+  clip: unset;
+  height: auto;
+}
+.globalheader .tip:hover span::before, .globalheader .tip:focus span::before {
+  content: "";
+  width: 100%;
+  display: block;
+  background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-tiparrow.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  bottom: 100%;
+  left: 0;
+  height: 9px;
+  position: absolute;
+}
+
+.header {
+  background-color: #ededed;
+  min-height: 140px;
+  padding: 2em 1.5em;
+}
+.header a, .header a:hover, .header a:focus {
+  color: #333;
+  outline: none;
+}
+.header #header-logo {
+  display: inline-block;
+}
+
+/* Breadcrumbs */
+#s-lc-public-bc .breadcrumb {
+  font-size: 0.9em;
+}
+
+/* Links */
+#s-lib-admin-main .dataTables_paginate > ul.pagination > li.paginate_button:not(.disabled):not(.active) > a, #s-lib-public-main .dataTables_paginate > ul.pagination > li.paginate_button:not(.disabled):not(.active) > a, .s-lg-link-contrast, .ui-widget-content a, a {
+  color: #2346AF;
+}
+
+a {
+  text-decoration: underline;
+}
+a:focus, a:hover {
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: 1px;
+  color: #2346AF;
+}
+a:focus img, a:hover img {
+  outline: dotted 2px #000;
+}
+a:visited, a:visited:focus, a:visited:hover {
+  color: #551A8B;
+}
+
+.globalfooter {
+  background-color: #333;
+  padding: 1.5em 0;
+  min-height: 119px;
+  line-height: 1.2em;
+}
+.globalfooter .container .row {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 992px) {
+  .globalfooter .container .row {
+    justify-content: space-around;
+  }
+}
+.globalfooter ul {
+  margin: 0;
+  padding: 0;
+}
+.globalfooter li {
+  list-style: none;
+  margin: 0 0 0.2em 0;
+}
+.globalfooter a {
+  color: #ececec;
+  text-decoration: none;
+}
+.globalfooter a:hover, .globalfooter a:focus, .globalfooter a:visited:hover, .globalfooter a:visited:focus {
+  text-decoration: underline;
+  color: #fff;
+}
+.globalfooter a:hover {
+  outline: none;
+}
+.globalfooter a:focus {
+  outline-color: #ececec;
+  outline-style: dotted;
+}
+.globalfooter .two-columns {
+  padding-right: 15px;
+  padding-left: 15px;
+  columns: 140px 2;
+}
+.globalfooter .address-col {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.globalfooter .address-col img {
+  padding-right: 1em;
+  vertical-align: unset;
+}
+.globalfooter .address-col .address {
+  display: inline-block;
+  vertical-align: top;
+}
+.globalfooter .address-col .address span {
+  display: block;
+  color: #ccc;
+}
+.globalfooter .social {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.globalfooter .social ul {
+  display: block;
+}
+.globalfooter .social ul li {
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.globalfooter .social ul li a {
+  display: block;
+  height: 45px;
+  width: 45px;
+  float: left;
+  background-image: url("http://libraries.ou.edu/common/images/libguides/social-icons.png");
+  background-repeat: no-repeat;
+  line-height: 0;
+}
+.globalfooter .social ul li a.facebook {
+  background-position: 0 0;
+}
+.globalfooter .social ul li a.twitter {
+  background-position: 0 -46px;
+}
+.globalfooter .social ul li a.youtube {
+  background-position: 0 -92px;
+}
+.globalfooter .social ul li a.pinterest {
+  background-position: 0 -276px;
+}
+.globalfooter .social ul li a:focus, .globalfooter .social ul li a:hover {
+  background-position-x: -46px;
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+/*# sourceMappingURL=libcal.css.map */

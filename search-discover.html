@@ -1,0 +1,27 @@
+<script type="text/javascript"> 
+    function searchPrimo()
+    {
+    document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value;
+    document.forms["searchForm"].submit();
+    }
+    </script>
+    <form name="searchForm" role="search" method="get" action="https://ou-primo.hosted.exlibrisgroup.com/primo-explore/search" enctype="application/x-www-form-urlencoded; charset=utf-8" id="search-discover" class="search-discover" target="_self" onsubmit="searchPrimo()">
+        <input name="institution" value="OU" type="hidden">
+        <input name="vid" value="OUNEW" type="hidden">
+        <input name="tab" value="default_tab" type="hidden">
+        <input name="onCampus" value="true" type="hidden">
+        <input name="displayMode" value="full" type="hidden">
+        <input type="hidden" id="primoQuery" name="query" />
+        <input type="text" aria-label="search text" size="25" id="primoQueryTemp" value="" name="queryTemp"/>
+    <select name="search_scope" aria-label="search location">
+    <option value="default_scope">Discover</option>
+    <option value="ou_alma">Discover Local (Catalog)</option>
+    </select>
+        <input value="Search" id="go" type="button" onClick="searchPrimo()">
+      </form>
+    <br />
+    <a href="https://ou-primo.hosted.exlibrisgroup.com/primo-explore/search?vid=OUNEW&lang=en_US&mode=advanced&offset=0" Target="_blank">Advanced Search</a>
+    <span aria-hidden="true">|</span>
+    <a href="https://ou-primo.hosted.exlibrisgroup.com/primo-explore/browse?vid=OUNEW" target="_blank">Browse Search</a>
+    <span aria-hidden="true">|</span>
+    <a href="https://ou-primo.hosted.exlibrisgroup.com/primo-explore/search?vid=OUNEW&search_scope=ou_alma&lang=en_US&mode=advanced&offset=0" target="_blank">Discover Local (Catalog)</a>

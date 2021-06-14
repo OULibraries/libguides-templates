@@ -1,0 +1,797 @@
+@use "sass:color";
+
+// Base colors
+$crimson: #841617;
+$link-blue: #2346AF;
+$link-purple: #551A8B;
+$profile-teal: #196076;
+$profile-teal-dark: #04161B;
+$main-dark: #333;
+$main-light: #fff;
+
+// Mixins
+@mixin footer-padding() {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+@mixin monofont() {
+    //font-family:"Courier", "Courier New", monospace;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+@mixin font-size($val) {
+    font-size: 1px * $val;
+    font-size: .1rem * $val;
+}
+@mixin heading-font() {
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* General Utility Classes */
+.sr-only {
+    // Hides elements visually using WebAIM's clip method
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* Skip Link and Back to Top */
+#s-lg-public-skiplink {
+    position: absolute;
+    top: -3em;
+    left: 1em;
+    transition: top .5s ease;
+    padding: .9em .6em;
+    text-decoration: underline;
+    opacity: 0;
+    color: $link-blue;
+    background-color: $main-light;
+    border-color: $main-dark;
+    box-shadow: 0 0 2px 2px rgb(76, 76, 76);
+    box-shadow: 0 0 2px 2px rgba(76, 76, 76, .5);
+    &:focus, &:active {
+        top: 1em;
+        left: 1em;
+        outline: none;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: .5em;
+        opacity: 1;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+#s-lib-scroll-top {
+    bottom: 15%;
+    width: 40px;
+    height: 40px;
+    right: 15px;
+    border: 3px solid $main-dark;
+    border-radius: .5em;
+    &:hover, &:focus {
+        background-color: #ccc;
+    }
+    & > .fa-stack {
+        font-size: 1.5em;
+        line-height: 1em;
+        width: auto;
+        height: auto;
+    }
+    .fa-angle-double-up.fa-stack-1x {
+        position: relative;
+        bottom: 6px;
+    }
+}
+
+/* General Layout */
+html {
+    font-size: 62.5%;
+}
+body {
+    padding: 0;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    @include font-size(14);
+}
+main > .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Header */
+.globalheader {
+    background-color: $main-dark;
+    ul {
+        height: 30px;
+        float: right;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        padding-right: 40px;
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+        }
+        li {
+            float: left;
+            &.wordmark {
+                color: $main-light;
+                width: 200px;
+                height: 30px;
+                margin-left: 1.4rem;
+                background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-wordmark.png");
+                background-repeat: no-repeat;
+                background-position: center center;
+                @media only screen and (max-width: 479px) {
+                    display: none;
+                }
+            }
+        }
+    }
+    .tip {
+        position: relative;
+        display: block;
+        height: 30px;
+        width: 30px;
+        background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-icons.png");
+        background-repeat: no-repeat;
+        line-height: 0;
+        border: none;
+        &.home {
+            background-position: 0 0;
+        }
+        &.search {
+            background-position: -30px 0;
+        }
+        &.social {
+            background-position: -60px 0;
+        }
+        span {
+            @extend .sr-only;
+            color: #fff;
+            background-color: #222;
+        }
+        &:hover, &:focus {
+            background-position-y: -30px;
+            background-color: #e8e8e8;
+            outline: none;
+            span {
+                position: absolute;
+                z-index: 25;
+                top: 135%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: auto;
+                min-width: 12.5rem;
+                display: block;
+                margin: 0;
+                padding: 1.5rem 0.5rem;
+                border: 1px solid #444;
+                background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-tipbg.gif");
+                background-repeat: repeat;
+                background-color: #222;
+                white-space: nowrap;
+                text-align: center;
+                color: $main-light;
+                @include font-size(12.5);
+                overflow: unset;
+                clip: unset;
+                clip-path: unset;
+                height: auto;
+                &::before {
+                    content: "";
+                    width: 100%;
+                    display: block;
+                    background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-tiparrow.png");
+                    background-repeat: no-repeat;
+                    background-position: top center;
+                    bottom: 100%;
+                    left: 0;
+                    height: 9px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+.header {
+    background-color: color.adjust($main-light, $lightness: -7%);
+    min-height: 140px;
+    padding: 2em 1.5em;
+    a, a:hover, a:focus {
+        color: $main-dark;
+        background-color: transparent;
+        outline: none;
+        border: none;
+    }
+    #header-logo {
+        display: inline-block;
+    }
+}
+/* Navigation */
+#s-lg-guide-tabs {
+    @include font-size(15);
+    .nav-pills {
+        a {
+            text-decoration: none;
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+        }
+        & > li > a {
+            &:hover, &:focus {
+                background-color: $crimson;
+                text-decoration: underline;
+                outline-offset: 0;
+            }
+            &:hover {
+                outline: none;
+            }
+        }
+        & > li > a, & > li > button {
+            font-weight: normal;
+        }
+    }
+    li li {
+        @include font-size(14);
+    }
+    .nav-tabs {
+        & > li > a, & > li > button {
+            font-weight: normal;
+        }
+    }
+}
+.s-lg-tabs-side .s-lg-boxnav .list-group-item {
+    padding: 0;
+    a {
+        display: block;
+        padding: 4px 15px;
+    }
+}
+/* Main */
+.s-lib-side-borders {
+    // Give page slight padding when screen is small (makes up for lack of body padding), but go back to 0 when screen is large.
+    padding-right: 5px;
+    padding-left: 5px;
+    @media (min-width: 768px) {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-6 {
+        flex-grow: 1;
+    }
+}
+// discover local search - at least for now
+.search-discover {
+    input {
+        padding: 1px 3px;
+    }
+    select {
+        height: initial;
+        cursor: pointer;
+        padding: 4px 4px;
+    }
+    #go {
+        padding: 1px 6px;
+        margin-top: 3px;
+    }
+}
+// gallery
+#s-lg-col-1 {
+    max-width: 100%;
+}
+.slick-prev, .slick-next {
+    height: 25px !important;
+    width: 25px !important;
+    &:before {
+        font-size: 25px !important;
+        font-size: 2.5rem !important;
+        position: absolute;
+        top: 2px;
+    }
+    &:hover:before {
+        font-size: 27px !important;
+        font-size: 2.7rem !important;
+    }
+}
+.slick-prev {
+    left: -26px !important;
+    &:before {
+        right: 0;
+    }
+}
+.slick-next {
+    right: -26px !important;
+    &:before {
+        left: 0;
+    }
+}
+/* tabs - largely inspired by W3 code (https://www.w3.org/TR/wai-aria-practices/examples/tabs/css/tabs.css) */
+// (TODO: more attribution?)
+.s-lib-jqtabs {
+    .nav-tabs button {
+            position: relative;
+            padding: 10px 15px;
+            margin-top: 5px;
+            margin-right: 5px;
+            line-height: 1.4;
+            border: solid 1px color.adjust($main-light, $lightness: -33%);
+            border-radius: 3px 3px 0 0;
+            outline-offset: 1px;
+            box-shadow: 0 0 2px color.adjust($main-light, $lightness: -33%);
+            background-color: color.adjust($main-light, $lightness: -7%);
+            transform: translateY(1px);
+        &:focus, &:hover {
+            color: color.adjust($main-dark, $lightness: -13%);
+            background-color: color.adjust($main-light, $lightness: -12%);
+            border-color: color.adjust($main-dark, $lightness: -13%);
+            border-bottom-color: color.adjust($main-light, $lightness: -33%);
+        }
+        &.active, &:focus, &:hover {
+            border-radius: 0;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 100%;
+                right: -1px;
+                left: -1px;
+                border-radius: 5px 5px 0 0;
+                border-top: 3px solid $main-dark;
+            }
+        }
+        &.active {
+            background-color: color.adjust($main-light, $lightness: -2%);
+            &:hover, &:focus {
+                background-color: color.adjust($main-light, $lightness: -2%);
+                border-color: color.adjust($main-light, $lightness: -33%);
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 3;
+                bottom: -3px;
+                right: 0;
+                left: 0;
+                height: 3px;
+                background-color: color.adjust($main-light, $lightness: -2%);
+                box-shadow: none;
+            }
+            &:not(:focus):not(:hover)::before {
+                border-top: 5px solid $crimson;
+            }
+        }
+    }
+    .tab-pane {
+        display: none;
+        padding: 10px;
+        border: 1px solid color.adjust($main-light, $lightness: -33%);
+        border-radius: 0 3px 3px 3px;
+        box-shadow: 0 0 2px color.adjust($main-light, $lightness: -33%);
+        background-color: color.adjust($main-light, $lightness: -2%);
+        &.active {
+            display: block;
+        }
+    }
+}
+/* Footer */
+.s-lib-footer {
+    @include font-size(13);
+    background-color: $main-light;
+    #s-lg-guide-header-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #s-lg-guide-header-attributes {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #s-lg-guide-print-url button {
+        line-height: 1.4rem;
+    }
+}
+#s-lg-guide-header-attributes div, #s-lg-guide-header-attributes-editor div {
+    padding: 0 10px 0 0;
+}
+.globalfooter {
+    background-color: $main-dark;
+    padding: 2.1rem 0;
+    min-height: 119px;
+    line-height: 1.6rem;
+    .container .row {
+        padding-top: 20px;
+        padding-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        @media (min-width: 992px) {
+            // easiest change if the footer alignment is an issue
+            justify-content: space-around;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        margin: 0 0 .4rem 0;
+    }
+    a {
+        color: color.adjust($main-light, $lightness: -7%);
+        text-decoration: none;
+        border: none;
+        &:hover, &:focus, &:visited:hover, &:visited:focus {
+            text-decoration: underline;
+            color: $main-light;
+            background-color: transparent;
+        }
+        &:visited {
+            color: color.adjust($main-light, $lightness: -7%);
+        }
+        &:hover {
+            outline: none;
+        }
+        &:focus {
+            outline-color: color.adjust($main-light, $lightness: -7%);
+            outline-style: dotted;
+        }
+    }
+    .two-columns {
+        @include footer-padding();
+        columns: 140px 2;
+    }
+    .address-col {
+        @include footer-padding();
+        img {
+            padding-right: 1em;
+            vertical-align: unset;
+        }
+        .address {
+            display: inline-block;
+            vertical-align: top;
+            span {
+                display: block;
+                color: color.adjust($main-light, $lightness: -20%);
+            }
+        }
+    }
+    .social {
+        @include footer-padding();
+        ul {
+            display: block;
+            li {
+                height: 45px;
+                width: 45px;
+                display: inline-block;
+                margin-right: 5px;
+                a {
+                    display: block;
+                    height: 45px;
+                    width: 45px;
+                    float: left;
+                    background-image: url("http://libraries.ou.edu/common/images/libguides/social-icons.png");
+                    background-repeat: no-repeat;
+                    line-height: 0;
+                    &.facebook {
+                        background-position: 0 0;
+                    }
+                    &.twitter {
+                        background-position: 0 -46px;
+                    }
+                    &.youtube {
+                        background-position: 0 -92px;
+                    }
+                    &.pinterest {
+                        // not currently applicable
+                        background-position: 0 -276px;
+                    }
+                    &:focus, &:hover {
+                        background-position-x: -46px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Content */
+// headings
+#s-lg-guide-header-info h1, .s-lib-header h1 {
+    @include font-size(28); // prev 24
+}
+h2 {
+    font-style: normal !important;
+    @include font-size(25);
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $main-dark;
+    font-family: Tahoma, "Lucida Grande", "Lucida Sans", "Lucida Sans Regular", "Lucida Sans Unicode", Verdana, sans-serif;
+}
+.s-lib-box-content h2:not(:first-child) {
+    margin-top: 40px;
+    @include font-size(25);
+}
+// heading 2 for standard boxes
+.s-lib-box .s-lib-box-title {
+    @include font-size(15);
+}
+h3 {
+    margin-top: 25px;
+    @include font-size(22);
+    border-left: 8px solid;
+    border-bottom: 1px solid;
+    padding-left: 8px;
+    border-color: $crimson;
+    @include heading-font();
+    font-weight: normal;
+}
+h4 {
+    margin-top: 20px;
+    @include font-size(20);
+    @include heading-font();
+}
+h5 {
+    @include font-size(17);
+    @include heading-font();
+}
+h6 {
+    @include font-size(15);
+    @include heading-font();
+}
+// links
+#s-lib-admin-main .dataTables_paginate>ul.pagination>li.paginate_button:not(.disabled):not(.active)>a,#s-lib-public-main .dataTables_paginate>ul.pagination>li.paginate_button:not(.disabled):not(.active)>a, .s-lg-link-contrast, .ui-widget-content a, a {
+    color: $link-blue;
+}
+a {
+    text-decoration: underline;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    &:focus, &:hover {
+        border-color: #aaa;
+        background-color: #f5f5f5;
+        color: $crimson;
+        outline: revert;
+        outline-offset: 1px;
+        // images that are also links
+        img {
+            outline: dotted 2px #000;
+        }
+    }
+    &:visited {
+        color: $link-purple;
+        // color: #196076; - a teal option, not as different from the normal link color as the purple option above
+    }
+    &:visited:focus, &:visited:hover {
+        color: color.adjust($link-purple, $lightness: -15%);
+    }
+}
+.s-lg-icons a {
+    text-decoration: none;
+    img {
+        outline: none;
+    }
+}
+.fa-external-link {
+    padding: 2px;
+    margin-left: 2px;
+    color: $main-dark;
+}
+// lists
+.s-lg-link-list-5 {
+    list-style-type: disc;
+}
+.list-merge {
+    li {
+        margin-bottom: 10px;
+    }
+    .s-lg-book {
+        padding-bottom: 5px;
+    }
+}
+ol ol {
+    list-style-type: lower-alpha;
+    ol {
+        list-style-type: lower-roman;
+        ol {
+            list-style-type: decimal;
+        }
+    }
+}
+// tables
+main table, .table {
+    &>thead {
+        color: #000;
+        background-color: #ccc;
+        border: 1px solid #555;
+        border-bottom: 2px solid #555;
+        &>tr {
+            &>th {
+                border-bottom: none;
+            }
+        }
+    }
+    th, td {
+        border: 1px solid #555 !important;
+    }
+    &>tbody {
+        &>tr:hover, &>tr:focus {
+            background-color: #ccc !important;
+            color: #000;
+        }
+        &>tr:focus {
+            box-shadow: 0 0 3px 1px #333;
+            transform: translate(0, 0);
+        }
+        &>tr:nth-of-type(odd) {
+            background-color: #eee;
+        }
+        &>tr>th {
+            background-color: #ccc;
+            color: #000;
+        }
+    }
+    &>thead+tbody {
+        &>tr:nth-of-type(odd) {
+            background-color: inherit;
+        }
+        &>tr:nth-of-type(even) {
+            background-color: #eee;
+        }
+    }
+}
+// general elements
+hr {
+    border-color: color.adjust($main-dark, $lightness: 13%);
+}
+caption {
+    color: color.adjust($main-dark, $lightness: 7%);
+}
+code, kbd {
+    font-size: inherit;
+}
+code {
+    color: $crimson;
+    background-color: #f3f3f3;
+}
+samp {
+    background-color: #f3f3f3;
+    padding: 2px 4px;
+}
+var {
+    font-weight: bold;
+    //font-style: normal;
+    @include font-size(15);
+    @include monofont();
+}
+del {
+    background-color: #fbb;
+    color: $main-dark;
+    @include font-size(15);
+    @include monofont();
+    &::before, &::after {
+        @extend .sr-only;
+    }
+    &::before {
+        content: " [deletion start] ";
+    }
+    &::after {
+        content: " [deletion end] ";
+    }
+}
+ins {
+    background-color: #d4fcbc;
+    color: $main-dark;
+    @include font-size(15);
+    text-decoration: none;
+    @include monofont();
+    &::before, &::after {
+        @extend .sr-only;
+    }
+    &::before {
+        content: " [insertion start] ";
+    }
+    &::after {
+        content: " [insertion end] ";
+    }
+}
+s {
+    @include font-size(15);
+    &::before, &::after {
+        @extend .sr-only;
+    }
+    &::before {
+        content: " [strikethrough start] ";
+    }
+    &::after {
+        content: " [strikethrough end] ";
+    }
+}
+// Breadcrumbs
+#s-lib-admin-bc .breadcrumb, #s-lib-bc .breadcrumb {
+    @include font-size(12.5);
+}
+.breadcrumb>li+li:before {
+    // hide slashes from screen readers by providing null alt text
+    content: "/ " / "";
+}
+// Profile box
+.s-lib-profile-container>a {
+    display: block;
+    border: none;
+    margin-bottom: 5px;
+    &:hover, &:focus {
+        outline: 2px dotted #000;
+        background-color: transparent;
+        img {
+            outline: none;
+        }
+    }
+}
+.s-lib-profile-name {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.s-lib-profile-email a, .s-lib-profile-widget button {
+    // Have to use important to override button settings.
+    display: inline-block;
+    background-color: $profile-teal !important;
+    color: $main-light !important;
+    border: none !important;
+    border-radius: 4px;
+    font: inherit !important;
+    font-size: 16px !important;
+    font-size: 1.6rem !important;
+    text-decoration:none;
+    padding: 5px 20px !important;
+    &:hover, &:focus {
+        background-color: $profile-teal-dark !important;
+        text-decoration: underline !important;
+        opacity: 100% !important;
+        border: none !important;
+
+    }
+}
+/* Previous/Next - Page navigation */
+#s-lg-page-prevnext {
+    display: block;
+    font-size: inherit;
+    li > a:focus, li >a:hover {
+        text-decoration: underline;
+        outline: none;
+    }
+}
+
+/* Editor CSS */
+.s-lg-guide-body .s-lib-cmd-bar {
+    position: sticky;
+    margin: 0;
+    font-size: .8em;
+}
+.s-lg-edit-link:hover, .s-lg-edit-link:focus, button.close:hover, button.close:focus {
+    outline-style: solid;
+    outline-width: 1px;
+    outline-offset: 1px;
+    outline-color: #ececec;
+}
+
+// editor buttons
+.s-lib-box-std {
+    .s-lg-edit-link, .close {
+        color: #eee;
+        opacity: .6;
+        &:hover, &:focus {
+            color: #eee;
+            opacity: .8;
+        }
+    }
+}

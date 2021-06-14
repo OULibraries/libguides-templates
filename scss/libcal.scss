@@ -1,0 +1,307 @@
+// <link rel="stylesheet" type="text/css" href="https://theoacker.oucreate.com/temp/libcal.css">
+
+$crimson: #841617;
+$link-blue: #2346AF;
+
+html {
+    font-size: 1em;
+}
+body {
+    padding: 0;
+    font-family: verdana;
+    font-size: .85em;
+}
+
+/* Special */
+// sr-only - an important class to have
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+/* Skip Link */
+#s-lg-public-skiplink {
+    position: absolute;
+    top: -3em;
+    left: 1em;
+    transition: top .5s ease;
+    padding: .9em .6em;
+    text-decoration: underline;
+    opacity: 0;
+    color: $link-blue;
+    background-color: #fff;
+    border-color: #333;
+    box-shadow: 0 0 2px 2px rgb(76, 76, 76);
+    box-shadow: 0 0 2px 2px rgba(76, 76, 76, .5);
+    &:focus, &:active {
+        top: 1em;
+        left: 1em;
+        outline: none;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: .5em;
+        opacity: 1;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+/* Back to Top */
+#s-lib-scroll-top {
+    bottom: 15%;
+    width: 40px;
+    height: 40px;
+    right: 15px;
+    border: 3px solid #333;
+    border-radius: .5em;
+    &:hover, &:focus {
+        background-color: #ccc;
+    }
+    & > .fa-stack {
+        font-size: 1.5em;
+        line-height: 1em;
+        width: auto;
+        height: auto;
+    }
+    .fa-angle-double-up.fa-stack-1x {
+        position: relative;
+        bottom: 6px;
+    }
+}
+
+/* Headers */
+.globalheader {
+    background-color: #333;
+    ul {
+        height: 30px;
+        float: right;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        padding-right: 40px;
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+        }
+        li {
+            float: left;
+            &.wordmark {
+                color: #fff;
+                width: 200px;
+                height: 30px;
+                margin-left: 1em;
+                background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-wordmark.png");
+                background-repeat: no-repeat;
+                background-position: center center;
+                @media only screen and (max-width: 479px) {
+                    display: none;
+                }
+            }
+        }
+    }
+    .tip {
+        position: relative;
+        display: block;
+        height: 30px;
+        width: 30px;
+        background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-icons.png");
+        background-repeat: no-repeat;
+        line-height: 0;
+        &.home {
+            background-position: 0 0;
+        }
+        &.search {
+            background-position: -30px 0;
+        }
+        &.social {
+            background-position: -60px 0;
+        }
+        span {
+            @extend .sr-only;
+        }
+        &:hover, &:focus {
+            background-position-y: -30px;
+            background-color: #e8e8e8;
+            outline: none;
+            span {
+                position: absolute;
+                z-index: 25;
+                top: 135%;
+                left: -3.75em;
+                width: 10em;
+                display: block;
+                margin: 0;
+                padding: 1.25em 0;
+                border: 1px solid #444;
+                background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-tipbg.gif");
+                background-repeat: repeat;
+                background-color: #222;
+                white-space: nowrap;
+                text-align: center;
+                color: #fff;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: .9em;
+                overflow: unset;
+                clip: unset;
+                height: auto;
+                &::before {
+                    content: "";
+                    width: 100%;
+                    display: block;
+                    background-image: url("http://libraries.ou.edu/common/images/libguides/ou-globalheader-tiparrow.png");
+                    background-repeat: no-repeat;
+                    background-position: top center;
+                    bottom: 100%;
+                    left: 0;
+                    height: 9px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+.header {
+    background-color: #ededed;
+    min-height: 140px;
+    padding: 2em 1.5em;
+    a, a:hover, a:focus {
+        color: #333;
+        outline: none;
+    }
+    #header-logo {
+        display: inline-block;
+    }
+}
+/* Breadcrumbs */
+#s-lc-public-bc .breadcrumb {
+    font-size: .9em;
+}
+/* Links */
+#s-lib-admin-main .dataTables_paginate>ul.pagination>li.paginate_button:not(.disabled):not(.active)>a,#s-lib-public-main .dataTables_paginate>ul.pagination>li.paginate_button:not(.disabled):not(.active)>a, .s-lg-link-contrast, .ui-widget-content a, a {
+    color: $link-blue;
+}
+a {
+    text-decoration: underline;
+    &:focus, &:hover {
+        outline-width: 1px;
+        outline-style: solid;
+        outline-offset: 1px;
+        color: $link-blue;
+        // images that are also links
+        img {
+            outline: dotted 2px #000;
+        }
+    }
+    &:visited, &:visited:focus, &:visited:hover {
+        color: #551A8B;
+        // color: #196076; - a teal option, not as different from the normal link color as the purple option above
+    }
+}
+@mixin footer-padding() {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.globalfooter {
+    background-color: #333;
+    padding: 1.5em 0;
+    min-height: 119px;
+    line-height: 1.2em;
+    .container .row {
+        padding-top: 20px;
+        padding-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        @media (min-width: 992px) {
+            // easiest change if the footer alignment is an issue
+            justify-content: space-around;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        margin: 0 0 .2em 0;
+    }
+    a {
+        color: #ececec;
+        text-decoration: none;
+        &:hover, &:focus, &:visited:hover, &:visited:focus {
+            text-decoration: underline;
+            color: #fff;
+        }
+        &:hover {
+            outline: none;
+        }
+        &:focus {
+            outline-color: #ececec;
+            outline-style: dotted;
+        }
+    }
+    .two-columns {
+        @include footer-padding();
+        columns: 140px 2;
+    }
+    .address-col {
+        @include footer-padding();
+        img {
+            padding-right: 1em;
+            vertical-align: unset;
+        }
+        .address {
+            display: inline-block;
+            vertical-align: top;
+            span {
+                display: block;
+                color: #ccc;
+            }
+        }
+    }
+    .social {
+        @include footer-padding();
+        ul {
+            display: block;
+            li {
+                height: 45px;
+                width: 45px;
+                display: inline-block;
+                margin-right: 5px;
+                a {
+                    display: block;
+                    height: 45px;
+                    width: 45px;
+                    float: left;
+                    background-image: url("http://libraries.ou.edu/common/images/libguides/social-icons.png");
+                    background-repeat: no-repeat;
+                    line-height: 0;
+                    &.facebook {
+                        background-position: 0 0;
+                    }
+                    &.twitter {
+                        background-position: 0 -46px;
+                    }
+                    &.youtube {
+                        background-position: 0 -92px;
+                    }
+                    &.pinterest {
+                        // not currently applicable
+                        background-position: 0 -276px;
+                    }
+                    &:focus, &:hover {
+                        background-position-x: -46px;
+                    }
+                }
+            }
+        }
+    }
+}
+li {
+    margin-bottom: 2px;
+}
