@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // Check if admin or public side and add appropriate content:
     // Important! If the name of the CSS file added is changed to something other than local.css, this code will also need to change.
-    if (!$("link[href='//s3.amazonaws.com/libapps/sites/615/include/local.css']").length) adminPanelSetup();
+    if (!$("link[href='//libapps.s3.amazonaws.com/sites/615/include/local.css']").length) adminPanelSetup();
     else publicSetup();
 
     // Remove page navigation if it has no content
@@ -26,7 +26,7 @@ $(document).ready(function() {
     else if (sideTitles.text().toLowerCase().includes("quick links")) {
         // TODO: Which first?
         if (sideTitles.length > 1) $("#side-nav-aside").attr("aria-label", "Quick Links and Contact Information");
-        else $("$side-nav-aside").attr("aria-label", "Quick Links");
+        else $("#side-nav-aside").attr("aria-label", "Quick Links");
     }
 
     // Links
