@@ -21,7 +21,7 @@
   opacity: 0;
   color: #2346AF;
   background-color: #fff;
-  border-color: #333;
+  border-color: #323232;
   box-shadow: 0 0 2px 2px #4c4c4c;
   box-shadow: 0 0 2px 2px rgba(76, 76, 76, 0.5);
 }
@@ -43,7 +43,7 @@
   width: 40px;
   height: 40px;
   right: 15px;
-  border: 3px solid #333;
+  border: 3px solid #323232;
   border-radius: 0.5em;
 }
 #s-lib-scroll-top:hover, #s-lib-scroll-top:focus {
@@ -64,10 +64,13 @@
 html {
   font-size: 62.5%;
 }
-
+h1 {
+  font-family: arboria, sans-serif;
+  font-size: 1.5em;
+}
 body {
   padding: 0;
-  font-family: Verdana, Helvetica, Arial, sans-serif;
+  font-family: roboto,Helvetica,Arial,sans-serif
   font-size: 14px;
   font-size: 1.4rem;
 }
@@ -79,7 +82,7 @@ main > .row {
 
 /* Header */
 .globalheader {
-  background-color: #333;
+  background-color: #323232;
 }
 .globalheader ul {
   height: 30px;
@@ -178,12 +181,11 @@ main > .row {
 }
 
 .header {
-  background-color: #ededed;
   min-height: 140px;
   padding: 2em 1.5em;
 }
 .header a, .header a:hover, .header a:focus {
-  color: #333;
+  color: #323232;
   background-color: transparent;
   outline: none;
   border: none;
@@ -191,7 +193,10 @@ main > .row {
 .header #header-logo {
   display: inline-block;
 }
-
+.crimson_banner_border {
+  background-color: $crimson;
+  min-height: 20px;
+}
 /* Navigation */
 #s-lg-guide-tabs {
   font-size: 15px;
@@ -323,7 +328,7 @@ main > .row {
   right: -1px;
   left: -1px;
   border-radius: 5px 5px 0 0;
-  border-top: 3px solid #333;
+  border-top: 3px solid #323232;
 }
 .s-lib-jqtabs .nav-tabs button.active {
   background-color: #fafafa;
@@ -382,108 +387,148 @@ main > .row {
   padding: 0 10px 0 0;
 }
 
-.globalfooter {
-  background-color: #333;
-  padding: 2.1rem 0;
-  min-height: 119px;
-  line-height: 1.6rem;
+/*.globalfooter {*/
+/*  background-color: #323232;*/
+/*  padding: 2.1rem 0;*/
+/*  min-height: 119px;*/
+/*  line-height: 1.6rem;*/
+/*}*/
+/*.globalfooter .container .row {*/
+/*  padding-top: 20px;*/
+/*  padding-bottom: 30px;*/
+/*  display: flex;*/
+/*  flex-wrap: wrap;*/
+/*}*/
+/*@media (min-width: 992px) {*/
+/*  .globalfooter .container .row {*/
+/*    justify-content: space-around;*/
+/*  }*/
+/*}*/
+/*.globalfooter ul {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*}*/
+/*.globalfooter li {*/
+/*  list-style: none;*/
+/*  margin: 0 0 0.4rem 0;*/
+/*}*/
+/*.globalfooter a {*/
+/*  color: #ededed;*/
+/*  text-decoration: none;*/
+/*  border: none;*/
+/*}*/
+/*.globalfooter a:hover, .globalfooter a:focus, .globalfooter a:visited:hover, .globalfooter a:visited:focus {*/
+/*  text-decoration: underline;*/
+/*  color: #fff;*/
+/*  background-color: transparent;*/
+/*}*/
+/*.globalfooter a:visited {*/
+/*  color: #ededed;*/
+/*}*/
+/*.globalfooter a:hover {*/
+/*  outline: none;*/
+/*}*/
+/*.globalfooter a:focus {*/
+/*  outline-color: #ededed;*/
+/*  outline-style: dotted;*/
+/*}*/
+/*.globalfooter .two-columns {*/
+/*  padding-right: 15px;*/
+/*  padding-left: 15px;*/
+/*  columns: 140px 2;*/
+/*}*/
+/*.globalfooter .address-col {*/
+/*  padding-right: 15px;*/
+/*  padding-left: 15px;*/
+/*}*/
+/*.globalfooter .address-col img {*/
+/*  padding-right: 1em;*/
+/*  vertical-align: unset;*/
+/*}*/
+/*.globalfooter .address-col .address {*/
+/*  display: inline-block;*/
+/*  vertical-align: top;*/
+/*}*/
+/*.globalfooter .address-col .address span {*/
+/*  display: block;*/
+/*  color: #cccccc;*/
+/*}*/
+/*.globalfooter .social {*/
+/*  padding-right: 15px;*/
+/*  padding-left: 15px;*/
+/*}*/
+/*.globalfooter .social ul {*/
+/*  display: block;*/
+/*}*/
+/*.globalfooter .social ul li {*/
+/*  height: 45px;*/
+/*  width: 45px;*/
+/*  display: inline-block;*/
+/*  margin-right: 5px;*/
+/*}*/
+/*.globalfooter .social ul li a {*/
+/*  display: block;*/
+/*  height: 45px;*/
+/*  width: 45px;*/
+/*  float: left;*/
+/*  background-image: url("http://libraries.ou.edu/common/images/libguides/social-icons.png");*/
+/*  background-repeat: no-repeat;*/
+/*  line-height: 0;*/
+/*}*/
+/*.globalfooter .social ul li a.facebook {*/
+/*  background-position: 0 0;*/
+/*}*/
+/*.globalfooter .social ul li a.twitter {*/
+/*  background-position: 0 -46px;*/
+/*}*/
+/*.globalfooter .social ul li a.youtube {*/
+/*  background-position: 0 -92px;*/
+/*}*/
+/*.globalfooter .social ul li a.pinterest {*/
+/*  background-position: 0 -276px;*/
+/*}*/
+/*.globalfooter .social ul li a:focus, .globalfooter .social ul li a:hover {*/
+/*  background-position-x: -46px;*/
+/*}*/
+
+/*New Global Footer*/
+.site-footer {
+  padding: 2% 13% 2% 13%;
+  font-weight: 300 !important;
+  font-style: normal;
+  background: #841617;
 }
-.globalfooter .container .row {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  display: flex;
-  flex-wrap: wrap;
+.footer_social_icons {
+  margin: 0 auto;
 }
-@media (min-width: 992px) {
-  .globalfooter .container .row {
-    justify-content: space-around;
+.social_icon_white {
+  color: #fff;
+  font-size: 25px;
+}
+.footer_social_icons {
+  list-style: none;
+}
+.footer_links {
+  list-style: none;
+}
+.footer_links li a {
+  color: #fff;
+}
+
+ul.footer_social_icons li {
+  display: inline;
+}
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+@media (min-width: 1164px) {
+  .footer_header_row ul {
+    column-count: 2;
   }
 }
-.globalfooter ul {
-  margin: 0;
-  padding: 0;
-}
-.globalfooter li {
-  list-style: none;
-  margin: 0 0 0.4rem 0;
-}
-.globalfooter a {
-  color: #ededed;
-  text-decoration: none;
-  border: none;
-}
-.globalfooter a:hover, .globalfooter a:focus, .globalfooter a:visited:hover, .globalfooter a:visited:focus {
-  text-decoration: underline;
+.site-footer .extlink {
   color: #fff;
-  background-color: transparent;
-}
-.globalfooter a:visited {
-  color: #ededed;
-}
-.globalfooter a:hover {
-  outline: none;
-}
-.globalfooter a:focus {
-  outline-color: #ededed;
-  outline-style: dotted;
-}
-.globalfooter .two-columns {
-  padding-right: 15px;
-  padding-left: 15px;
-  columns: 140px 2;
-}
-.globalfooter .address-col {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.globalfooter .address-col img {
-  padding-right: 1em;
-  vertical-align: unset;
-}
-.globalfooter .address-col .address {
-  display: inline-block;
-  vertical-align: top;
-}
-.globalfooter .address-col .address span {
-  display: block;
-  color: #cccccc;
-}
-.globalfooter .social {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.globalfooter .social ul {
-  display: block;
-}
-.globalfooter .social ul li {
-  height: 45px;
-  width: 45px;
-  display: inline-block;
-  margin-right: 5px;
-}
-.globalfooter .social ul li a {
-  display: block;
-  height: 45px;
-  width: 45px;
-  float: left;
-  background-image: url("http://libraries.ou.edu/common/images/libguides/social-icons.png");
-  background-repeat: no-repeat;
-  line-height: 0;
-}
-.globalfooter .social ul li a.facebook {
-  background-position: 0 0;
-}
-.globalfooter .social ul li a.twitter {
-  background-position: 0 -46px;
-}
-.globalfooter .social ul li a.youtube {
-  background-position: 0 -92px;
-}
-.globalfooter .social ul li a.pinterest {
-  background-position: 0 -276px;
-}
-.globalfooter .social ul li a:focus, .globalfooter .social ul li a:hover {
-  background-position-x: -46px;
 }
 
 /* Content */
@@ -498,8 +543,8 @@ h2 {
   font-size: 2.5rem;
   font-weight: bold;
   padding-bottom: 10px;
-  border-bottom: 2px solid #333;
-  font-family: Tahoma, "Lucida Grande", "Lucida Sans", "Lucida Sans Regular", "Lucida Sans Unicode", Verdana, sans-serif;
+  border-bottom: 2px solid #323232;
+  font-family: roboto,Helvetica,Arial,sans-serif;
 }
 
 .s-lib-box-content h2:not(:first-child) {
@@ -522,7 +567,7 @@ h3 {
   padding-left: 8px;
   border-color: #841617;
   font-weight: bold;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: roboto,Helvetica,Arial,sans-serif;
   font-weight: normal;
 }
 
@@ -531,21 +576,21 @@ h4 {
   font-size: 20px;
   font-size: 2rem;
   font-weight: bold;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: roboto,Helvetica,Arial,sans-serif;
 }
 
 h5 {
   font-size: 17px;
   font-size: 1.7rem;
   font-weight: bold;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: roboto,Helvetica,Arial,sans-serif;
 }
 
 h6 {
   font-size: 15px;
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: roboto,Helvetica,Arial,sans-serif;
 }
 
 #s-lib-admin-main .dataTables_paginate > ul.pagination > li.paginate_button:not(.disabled):not(.active) > a, #s-lib-public-main .dataTables_paginate > ul.pagination > li.paginate_button:not(.disabled):not(.active) > a, .s-lg-link-contrast, .ui-widget-content a, a {
@@ -584,7 +629,7 @@ a:visited:focus, a:visited:hover {
 .fa-external-link {
   padding: 2px;
   margin-left: 2px;
-  color: #333;
+  color: #323232;
 }
 
 .s-lg-link-list-5 {
@@ -625,7 +670,7 @@ main table > tbody > tr:hover, main table > tbody > tr:focus, .table > tbody > t
   color: #000;
 }
 main table > tbody > tr:focus, .table > tbody > tr:focus {
-  box-shadow: 0 0 3px 1px #333;
+  box-shadow: 0 0 3px 1px #323232;
   transform: translate(0, 0);
 }
 main table > tbody > tr:nth-of-type(odd), .table > tbody > tr:nth-of-type(odd) {
@@ -675,7 +720,7 @@ var {
 
 del {
   background-color: #fbb;
-  color: #333;
+  color: #323232;
   font-size: 15px;
   font-size: 1.5rem;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -691,7 +736,7 @@ del::after {
 
 ins {
   background-color: #d4fcbc;
-  color: #333;
+  color: #323232;
   font-size: 15px;
   font-size: 1.5rem;
   text-decoration: none;
@@ -746,7 +791,7 @@ s::after {
 
 .s-lib-profile-email a, .s-lib-profile-widget button {
   display: inline-block;
-  background-color: #196076 !important;
+  background-color: #841617 !important;
   color: #fff !important;
   border: none !important;
   border-radius: 4px;
@@ -757,7 +802,7 @@ s::after {
   padding: 5px 20px !important;
 }
 .s-lib-profile-email a:hover, .s-lib-profile-email a:focus, .s-lib-profile-widget button:hover, .s-lib-profile-widget button:focus {
-  background-color: #04161B !important;
+  background-color: #4e0002 !important;
   text-decoration: underline !important;
   opacity: 100% !important;
   border: none !important;
