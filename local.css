@@ -70,7 +70,7 @@ h1 {
 }
 body {
   padding: 0;
-  font-family: roboto,Helvetica,Arial,sans-serif
+  font-family: roboto,Helvetica,Arial,sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
 }
@@ -183,6 +183,7 @@ main > .row {
 .header {
   min-height: 140px;
   padding: 2em 1.5em;
+  background: none !important;
 }
 .header a, .header a:hover, .header a:focus {
   color: #323232;
@@ -194,7 +195,7 @@ main > .row {
   display: inline-block;
 }
 .crimson_banner_border {
-  background-color: $crimson;
+  background-color: #841617;
   min-height: 20px;
 }
 /* Navigation */
@@ -387,116 +388,23 @@ main > .row {
   padding: 0 10px 0 0;
 }
 
-/*.globalfooter {*/
-/*  background-color: #323232;*/
-/*  padding: 2.1rem 0;*/
-/*  min-height: 119px;*/
-/*  line-height: 1.6rem;*/
-/*}*/
-/*.globalfooter .container .row {*/
-/*  padding-top: 20px;*/
-/*  padding-bottom: 30px;*/
-/*  display: flex;*/
-/*  flex-wrap: wrap;*/
-/*}*/
-/*@media (min-width: 992px) {*/
-/*  .globalfooter .container .row {*/
-/*    justify-content: space-around;*/
-/*  }*/
-/*}*/
-/*.globalfooter ul {*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*}*/
-/*.globalfooter li {*/
-/*  list-style: none;*/
-/*  margin: 0 0 0.4rem 0;*/
-/*}*/
-/*.globalfooter a {*/
-/*  color: #ededed;*/
-/*  text-decoration: none;*/
-/*  border: none;*/
-/*}*/
-/*.globalfooter a:hover, .globalfooter a:focus, .globalfooter a:visited:hover, .globalfooter a:visited:focus {*/
-/*  text-decoration: underline;*/
-/*  color: #fff;*/
-/*  background-color: transparent;*/
-/*}*/
-/*.globalfooter a:visited {*/
-/*  color: #ededed;*/
-/*}*/
-/*.globalfooter a:hover {*/
-/*  outline: none;*/
-/*}*/
-/*.globalfooter a:focus {*/
-/*  outline-color: #ededed;*/
-/*  outline-style: dotted;*/
-/*}*/
-/*.globalfooter .two-columns {*/
-/*  padding-right: 15px;*/
-/*  padding-left: 15px;*/
-/*  columns: 140px 2;*/
-/*}*/
-/*.globalfooter .address-col {*/
-/*  padding-right: 15px;*/
-/*  padding-left: 15px;*/
-/*}*/
-/*.globalfooter .address-col img {*/
-/*  padding-right: 1em;*/
-/*  vertical-align: unset;*/
-/*}*/
-/*.globalfooter .address-col .address {*/
-/*  display: inline-block;*/
-/*  vertical-align: top;*/
-/*}*/
-/*.globalfooter .address-col .address span {*/
-/*  display: block;*/
-/*  color: #cccccc;*/
-/*}*/
-/*.globalfooter .social {*/
-/*  padding-right: 15px;*/
-/*  padding-left: 15px;*/
-/*}*/
-/*.globalfooter .social ul {*/
-/*  display: block;*/
-/*}*/
-/*.globalfooter .social ul li {*/
-/*  height: 45px;*/
-/*  width: 45px;*/
-/*  display: inline-block;*/
-/*  margin-right: 5px;*/
-/*}*/
-/*.globalfooter .social ul li a {*/
-/*  display: block;*/
-/*  height: 45px;*/
-/*  width: 45px;*/
-/*  float: left;*/
-/*  background-image: url("http://libraries.ou.edu/common/images/libguides/social-icons.png");*/
-/*  background-repeat: no-repeat;*/
-/*  line-height: 0;*/
-/*}*/
-/*.globalfooter .social ul li a.facebook {*/
-/*  background-position: 0 0;*/
-/*}*/
-/*.globalfooter .social ul li a.twitter {*/
-/*  background-position: 0 -46px;*/
-/*}*/
-/*.globalfooter .social ul li a.youtube {*/
-/*  background-position: 0 -92px;*/
-/*}*/
-/*.globalfooter .social ul li a.pinterest {*/
-/*  background-position: 0 -276px;*/
-/*}*/
-/*.globalfooter .social ul li a:focus, .globalfooter .social ul li a:hover {*/
-/*  background-position-x: -46px;*/
-/*}*/
-
 /*New Global Footer*/
 .site-footer {
   padding: 2% 13% 2% 13%;
   font-weight: 300 !important;
   font-style: normal;
   background: #841617;
+}
+
+.footer_header_row h2 {
+  border-bottom: none !important;
+}
+.footer_div img {
+  max-width: 100%;
+  height: auto;
+}
+.site-footer .text-center {
+  text-align: center !important;
 }
 .footer_social_icons {
   margin: 0 auto;
@@ -511,7 +419,14 @@ main > .row {
 .footer_links {
   list-style: none;
 }
-.footer_links li a {
+.footer_links li a, .footer_header_row h2 {
+  color: #fff;
+}
+
+.footer_header_row .whitefont_links {
+  color: #fff;
+}
+.footer_header_row .whitefont_links li a:visited {
   color: #fff;
 }
 
@@ -841,4 +756,7 @@ s::after {
   opacity: 0.8;
 }
 
-/*# sourceMappingURL=public.css.map */
+.visually-hidden {
+  display: none;
+}
+
