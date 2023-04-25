@@ -4,10 +4,17 @@ html {
 
 body {
   padding: 0;
-  font-family: verdana;
+  font-family: roboto,Helvetica,Arial,sans-serif;
   font-size: 0.85em;
 }
 
+h1, h1.media-heading {
+  font-family: arboria, sans-serif !important;
+}
+
+.h2, .h3, .h4, .h5, .h6, h2, h3, h4, h5, h6 {
+  font-family: roboto,Helvetica,Arial,sans-serif !important;
+}
 /* Special */
 .sr-only, .globalheader .tip span {
   position: absolute;
@@ -144,7 +151,7 @@ body {
   white-space: nowrap;
   text-align: center;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: roboto,Helvetica,Arial,sans-serif;
   font-size: 0.9em;
   overflow: unset;
   clip: unset;
@@ -164,7 +171,6 @@ body {
 }
 
 .header {
-  background-color: #ededed;
   min-height: 140px;
   padding: 2em 1.5em;
 }
@@ -174,6 +180,11 @@ body {
 }
 .header #header-logo {
   display: inline-block;
+}
+
+.crimson_banner_border {
+  background-color: #841617;
+  min-height: 20px;
 }
 
 /* Breadcrumbs */
@@ -202,107 +213,73 @@ a:visited, a:visited:focus, a:visited:hover {
   color: #551A8B;
 }
 
-.globalfooter {
-  background-color: #333;
-  padding: 1.5em 0;
-  min-height: 119px;
-  line-height: 1.2em;
+/*New Global Footer*/
+.site-footer {
+  padding: 2% 13% 2% 13%;
+  font-weight: 300 !important;
+  font-style: normal;
+  background: #841617;
 }
-.globalfooter .container .row {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  display: flex;
-  flex-wrap: wrap;
+
+.footer_header_row h2 {
+  border-bottom: none !important;
 }
-@media (min-width: 992px) {
-  .globalfooter .container .row {
-    justify-content: space-around;
-  }
+.footer_div img {
+  max-width: 100%;
+  height: auto;
 }
-.globalfooter ul {
-  margin: 0;
-  padding: 0;
+.site-footer .text-center {
+  text-align: center !important;
 }
-.globalfooter li {
+.footer_social_icons {
+  margin: 0 auto;
+}
+.social_icon_white {
+  color: #fff;
+  font-size: 25px;
+}
+.footer_social_icons {
   list-style: none;
-  margin: 0 0 0.2em 0;
 }
-.globalfooter a {
-  color: #ececec;
-  text-decoration: none;
+.footer_links {
+  list-style: none;
 }
-.globalfooter a:hover, .globalfooter a:focus, .globalfooter a:visited:hover, .globalfooter a:visited:focus {
-  text-decoration: underline;
+.footer_links li a, .footer_header_row h2 {
   color: #fff;
 }
-.globalfooter a:hover {
-  outline: none;
+
+.footer_header_row .whitefont_links {
+  color: #fff;
 }
-.globalfooter a:focus {
-  outline-color: #ececec;
-  outline-style: dotted;
+.footer_header_row .whitefont_links li a:visited {
+  color: #fff;
 }
-.globalfooter .two-columns {
-  padding-right: 15px;
-  padding-left: 15px;
-  columns: 140px 2;
+
+.footer_header_row a:hover, .footer_social_icons a:hover {
+  color: #fff;
+  background-color: #841617;
 }
-.globalfooter .address-col {
-  padding-right: 15px;
-  padding-left: 15px;
+
+ul.footer_social_icons li {
+  display: inline;
 }
-.globalfooter .address-col img {
-  padding-right: 1em;
-  vertical-align: unset;
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
 }
-.globalfooter .address-col .address {
-  display: inline-block;
-  vertical-align: top;
+@media (min-width: 1164px) {
+  .footer_header_row ul {
+    column-count: 2;
+  }
 }
-.globalfooter .address-col .address span {
-  display: block;
-  color: #ccc;
-}
-.globalfooter .social {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.globalfooter .social ul {
-  display: block;
-}
-.globalfooter .social ul li {
-  height: 45px;
-  width: 45px;
-  display: inline-block;
-  margin-right: 5px;
-}
-.globalfooter .social ul li a {
-  display: block;
-  height: 45px;
-  width: 45px;
-  float: left;
-  background-image: url("http://libraries.ou.edu/common/images/libguides/social-icons.png");
-  background-repeat: no-repeat;
-  line-height: 0;
-}
-.globalfooter .social ul li a.facebook {
-  background-position: 0 0;
-}
-.globalfooter .social ul li a.twitter {
-  background-position: 0 -46px;
-}
-.globalfooter .social ul li a.youtube {
-  background-position: 0 -92px;
-}
-.globalfooter .social ul li a.pinterest {
-  background-position: 0 -276px;
-}
-.globalfooter .social ul li a:focus, .globalfooter .social ul li a:hover {
-  background-position-x: -46px;
+.site-footer .extlink {
+  color: #fff;
 }
 
 li {
   margin-bottom: 2px;
 }
-
+.visually-hidden {
+  display: none;
+}
 /*# sourceMappingURL=libcal.css.map */
