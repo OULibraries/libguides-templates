@@ -430,6 +430,11 @@ main > .row {
   color: #fff;
 }
 
+.footer_header_row a:hover, .footer_social_icons a:hover {
+  color: #fff;
+  background-color: #841617;
+}
+
 ul.footer_social_icons li {
   display: inline;
 }
