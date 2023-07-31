@@ -4,17 +4,14 @@ html {
 
 body {
   padding: 0;
-  font-family: roboto,Helvetica,Arial,sans-serif;
+  font-family: freight-text-pro, serif;
   font-size: 0.85em;
 }
 
-h1, h1.media-heading {
+h1, h1.media-heading, .h2, .h3, .h4, .h5, .h6, h2, h3, h4, h5, h6 {
   font-family: arboria, sans-serif !important;
 }
 
-.h2, .h3, .h4, .h5, .h6, h2, h3, h4, h5, h6 {
-  font-family: roboto,Helvetica,Arial,sans-serif !important;
-}
 /* Special */
 .sr-only, .globalheader .tip span {
   position: absolute;
@@ -151,7 +148,7 @@ h1, h1.media-heading {
   white-space: nowrap;
   text-align: center;
   color: #fff;
-  font-family: roboto,Helvetica,Arial,sans-serif;
+  font-family: freight-text-pro, serif;
   font-size: 0.9em;
   overflow: unset;
   clip: unset;
